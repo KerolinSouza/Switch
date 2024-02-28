@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura Switch-Case</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        img {
+            max-width: 200px;
+            max-height: 200px;
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Selecione o dia da semana:</h2>
+
+    <select name="" id="diaSemana" onchange="mostrarMensagem()">
+        <option value="default">Selecione um dia</option>
+        <option value="segunda">Segunda-Feira</option>
+        <option value="terca">Terça-Feira</option>
+        <option value="quarta">Quarta-Feira</option>
+        <option value="quinta">Quinta-Feira</option>
+        <option value="sexta">Sexta-Feira</option>
+        <option value="sabado">Sábado</option>
+        <option value="domingo">Domingo</option>
+    </select>
+
+    <div id="mensagem"></div>
+
+    <script>
+
+        function mostrarMensagem() {
+            var select = document.getElementById('diaSemana');
+            var diaSelecionado = select.value;
+            var mensagemElemento = document.getElementById('mensagem');
+            var mensagem = "";
+            var imagem = "";
+
+            switch (diaSelecionado) {
+                case "segunda":
+                    mensagem = "Boom dia! Que sua semana seja maravilhosa!";
+                    imagem = "https://cdn.pensador.com/img/imagens/pe/ns/pensador_frases_de_segunda_feira_01.jpg?auto_optimize=low&width=655";
+                    break;
+
+                case "terca":
+                    mensagem = "Boa tarde Terça-Feira sua linda!";
+                    imagem = "https://i.pinimg.com/736x/ed/ef/35/edef35096dbf11f53e40970dff9f6472.jpg";
+                    break;
+
+                case "quarta":
+                    mensagem = "Quarta-Feira de muitas bençãos";
+                    imagem = "https://frasesparapensar.com.br/wp-content/uploads/2020/03/Feliz-quarta-feira.jpeg";
+                    break;
+
+                case "quinta":
+                    mensagem = "Quinta-Feira chegou, pré fim de semana hahhah";
+                    imagem = "https://cdn.pensador.com/img/imagens/pe/ns/pensador_feliz_quinta_feira_04.jpg?auto_optimize=low&width=655";
+                    break;
+
+                case "sexta":
+                    mensagem = "Sexta-Feira chegou, bora animar todas";
+                    imagem = "https://www.momentodivino.com.br/img/imagens2/feliz-sexta-feira-1116Nc6UNjR6NJ.jpg";
+                    break;
+
+                case "sabado":
+                    mensagem = "Bora, bora Sábado";
+                    imagem = "https://cdn.pensador.com/img/imagens/pe/ns/pensador_feliz_sabado_0001.jpg?auto_optimize=low&width=655";
+                    break;
+
+                case "domingo":
+                    mensagem = "Um ótimo domingo, bora descansar que amanhã é Segunda-Feira";
+                    imagem = "https://cdn.pensador.com/img/imagens/bo/md/bom_domingo_mensagens_para_desejar_um_otimo_domingo_f_l.jpg?class=ogImageRectangle";
+                    break;
+                default:
+                    mensagem = "Por favor, selecione um dia da semana.";
+                    imagem = "";
+            }
+
+            mensagemElemento.innerHTML = "<p>" + mensagem + "</p>";
+            if (imagem !== "") {
+                mensagemElemento.innerHTML += "<img src='" + imagem + "' alt='Imagem do dia selecionado'>";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
